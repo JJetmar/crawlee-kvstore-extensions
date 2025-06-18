@@ -1,14 +1,15 @@
 // @ts-ignore
-import { cacheKeyValueStore } from "../src/";
+import { describe, test, vi, beforeEach, expect } from 'vitest';
+import { cacheKeyValueStore } from '../src/index.js';
 
 describe('Testing EncryptedKeyValueStore', () => {
     const mockedKeyValueStore = {
-        getValue: jest.fn(),
-        setValue: jest.fn(),
+        getValue: vi.fn(),
+        setValue: vi.fn(),
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     })
 
     test("Set null value to null value", async () => {
